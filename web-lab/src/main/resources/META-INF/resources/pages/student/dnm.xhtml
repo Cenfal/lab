@@ -12,18 +12,34 @@
     <h:form id="helloworld-form">
 
         <p:panel header="PrimeFaces Hello World Example">
-            <h:panelGrid columns="2" cellpadding="4">
-                <h:outputText value="First Name: " />
-                <p:inputText id="name" value="#{studentBean.student.studentId}" />
+            <h:panelGrid columns="1" cellpadding="4">
+                <h:outputText value="Name: " />
+                <p:inputText id="name" value="#{studentBean.student.name}" />
 
-                <h:outputText value="Last Name: " />
-                <p:inputText id="surname" value="#{studentBean.student.studentId}" />
+                <h:outputText value="Surname: " />
+                <p:inputText id="surname" value="#{studentBean.student.surname}" />
 
-                <h:outputText value="Last Name: " />
-                <p:inputText id="last-name" value="#{studentBean.student.studentId}" />
+                <h:outputText value="ID: " />
+                <p:inputText id="id" value="#{studentBean.student.studentId}" />
+
+                <h:outputText value="Dept. ID: " />
+                <p:inputText id="depid" value="#{studentBean.student.departmentId}" />
+
+                <h:outputText value="Student Number: " />
+                <p:inputText id="stnum" value="#{studentBean.student.studentnumber}" />
+
+                <h:outputText value="Password: " />
+                <p:inputText id="password" value="#{studentBean.student.password}" />
+
+                <h:outputText value="Title: " />
+                <p:inputText id="title" value="#{studentBean.student.title}" />
+
+                <p:commandButton value="Non-Ajax Submit" id="nonAjax" action="#{studentBean.save(student)}" style="margin-right:40px;" ajax="false" />
+
 
                 <p:commandButton id="submit" value="Submit"
                                  update="greeting-panel"
+                                 action="#{studentBean.save(student)}"
                                  oncomplete="PF('greetingDialog').show()" />
             </h:panelGrid>
         </p:panel>

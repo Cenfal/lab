@@ -16,12 +16,9 @@ hello insert
             <h:inputText value="#{studentBean.student.name}" />
             <h:outputLabel value="surname" />
             <h:inputText value="#{studentBean.student.surname}" />
-            <h:outputLabel value="password" />
-            <h:inputText value="#{studentBean.student.password}" />
-            <h:outputLabel value="studentId" />
-            <h:inputText value="#{studentBean.student.studentId}" />
-            <h:outputLabel value="title" />
-            <h:inputText value="#{studentBean.student.title}" />
+            <h:commandButton value = "Click Me!" onclick = "alert('Hello World!');" />
+            <h:commandButton value="Register" action="#{studentBean.save(student)}"/>
+
         </h:panelGrid>
 
     </h:form>
