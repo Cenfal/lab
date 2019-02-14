@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <title>JSF - commandButton example</title>
+</h:head>
+<h:body>
+hello insert
+    <h:form>
+        <h:panelGrid columns="1">
+            <h:outputLabel value="studentId" />
+            <h:inputText value="#{studentBean.student.studentId}" />
+            <h:outputLabel value="departmentId" />
+            <h:inputText value="#{studentBean.student.departmentId}" />
+            <h:outputLabel value="name" />
+            <h:inputText value="#{studentBean.student.name}" />
+            <h:outputLabel value="surname" />
+            <h:inputText value="#{studentBean.student.surname}" />
+            <h:outputLabel value="password" />
+            <h:inputText value="#{studentBean.student.password}" />
+            <h:outputLabel value="studentId" />
+            <h:inputText value="#{studentBean.student.studentId}" />
+            <h:outputLabel value="title" />
+            <h:inputText value="#{studentBean.student.title}" />
+        </h:panelGrid>
+
+    </h:form>
+</h:body>
+</html>
