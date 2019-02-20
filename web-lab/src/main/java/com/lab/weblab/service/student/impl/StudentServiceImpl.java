@@ -8,7 +8,7 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("studentService")
+@Service(value = "studentService")
 public class StudentServiceImpl extends BaseServiceImpl implements StudentService
 {
     @Setter

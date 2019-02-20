@@ -34,13 +34,15 @@
                 <h:outputText value="Title: " />
                 <p:inputText id="title" value="#{studentBean.student.title}" />
 
-                <p:commandButton value="Non-Ajax Submit" id="nonAjax" action="#{studentBean.save(student)}" style="margin-right:40px;" ajax="false" />
+                <p:commandButton value="Non-Ajax Submit" id="nonAjax" action="#{studentBean.save}" style="margin-right:80px;" ajax="false" />
 
 
                 <p:commandButton id="submit" value="Submit"
                                  update="greeting-panel"
-                                 action="#{studentBean.save(student)}"
+                                 action="#{studentBean.save}"
                                  oncomplete="PF('greetingDialog').show()" />
+
+                <h:commandButton value="Register" type="submit" action="#{studentBean.save}"/>
             </h:panelGrid>
         </p:panel>
 

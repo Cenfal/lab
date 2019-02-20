@@ -5,28 +5,26 @@ import com.lab.weblab.model.StudentEntity;
 import com.lab.weblab.service.student.StudentService;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-import javax.annotation.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
 
-
-@ViewScoped
-@ManagedBean(value = "studentBean")
+@Component
+@Scope(value="session")
 public class StudentBean
 {
-
-    @Setter
-    @ManagedProperty("#{studentService}")
+    @Autowired
     private StudentService studentService;
 
     @Getter @Setter
     private StudentEntity student = new StudentEntity();
 
-    public void save(StudentEntity student)
+    public void save()
     {
         try
         {
+
             this.studentService.save(student);
 
         }
