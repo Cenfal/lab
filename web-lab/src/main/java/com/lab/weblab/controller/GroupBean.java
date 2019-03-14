@@ -9,38 +9,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
 @Scope(value="session")
-public class GroupBean  {
+public class GroupBean {
 
     @Autowired
     private UserService userService;
-
-    @Autowired
-    private DepartmentBean departmentBean;
 
     @Getter
     @Setter
     private GroupEntity group = new GroupEntity();
 
-    ArrayList<GroupEntity> groupEntityArrayList = new ArrayList<GroupEntity>();
-    private List<GroupEntity> rolesList;
 
-    public void save() {
-        try {
+    public void save()
+    {
+        try
+        {
             this.userService.save(group);
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
-
-
     }
 
 
-    public void create() {
+    public void create()
+    {
         group = new GroupEntity();
     }
 

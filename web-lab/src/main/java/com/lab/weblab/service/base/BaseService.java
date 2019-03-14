@@ -1,7 +1,7 @@
 package com.lab.weblab.service.base;
 
-import java.io.Serializable;
-import java.util.List;
+        import java.io.Serializable;
+        import java.util.List;
 
 
 public interface BaseService {
@@ -21,4 +21,6 @@ public interface BaseService {
     <T> List<T> findAllByProperty(Class clazz, String propertyName, Object value);
 
     <T> List<T> findAll(Class clazz);
+
+
 }

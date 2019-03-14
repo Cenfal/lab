@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
+import javax.faces.bean.ManagedBean;
 import java.util.List;
 
 
 @Component
 @Scope(value="session")
+@ManagedBean(name = "departmentBean")
 public class DepartmentBean
 {
     @Autowired
@@ -22,12 +23,15 @@ public class DepartmentBean
     @Getter
     @Setter
     private DepartmentEntity department = new DepartmentEntity();
+
+
     @Getter
     @Setter
-    ArrayList<DepartmentEntity> departmentEntityArrayList = new ArrayList<DepartmentEntity>();
-    @Getter
-    @Setter
-    public List<DepartmentEntity> departmentEntityList;
+    private List<String> departments;
+
+
+
+
 
     public void save()
     {

@@ -22,26 +22,13 @@
 
                 <h:outputText value="Description: " />
                 <p:inputText id="description" value="#{groupBean.group.description}" />
+                //
+                <h:selectOneMenu value="#{departmentBean.department}">
+                    <f:selectItems value="#{departmentBean.departments}" />
+                </h:selectOneMenu>
 
-                               <h:outputText value="Department: " />
-                <p:selectOneMenu id="department1" value="#{departmentBean.departmentEntityArrayList}" style="width:150px"></p:selectOneMenu>
 
-                <h:outputText value="Department: " />
-                <p:selectOneMenu id="department2" value="#{departmentBean.departmentEntityList}" style="width:150px"></p:selectOneMenu>
 
-                <h:outputText value="Department :" />
-                <p:selectOneMenu value="#{departmentBean.department.description}">
-                    <c:forEach var="role" items="#{departmentBean.departmentEntityList}">
-                        <f:selectItem itemLabel="${role.description}" itemValue="${role.departmentId}" />
-                    </c:forEach>
-                </p:selectOneMenu>
-
-                <p:outputLabel for="group" value="Group: " />
-                <p:selectOneMenu id="group" value="#{dropdownView.country}" style="width:150px">
-                    <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
-                    <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
-                    <f:selectItems value="#{dropdownView.countries}" />
-                </p:selectOneMenu>
 
 
                 <h:panelGroup style="float: left">
