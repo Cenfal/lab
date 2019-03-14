@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Add Department</title>
+</h:head>
+
+<h:body>
+    <h:form id="AddDepartment-form">
+
+        <p:panel header="dd Department">
+            <h:panelGrid columns="1" cellpadding="4">
+                <h:outputText value="Name: " />
+                <p:inputText id="name" value="#{departmentBean.department.description}" />
+                <h:panelGroup style="float: left">
+                    <p:commandButton value="Yeni" action="#{departmentBean.create}" update="@form"/>
+                    <p:commandButton value="Kaydet" action="#{departmentBean.save}" update="@form"/>
+                </h:panelGroup>
+
+            </h:panelGrid>
+        </p:panel>
+
+        <p:dialog header="Greeting" widgetVar="greetingDialog"
+                  modal="true" resizable="false">
+            <h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
+                <h:outputText value="#{departmentBean.department.description}" />
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+</h:body>
+</html>

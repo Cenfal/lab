@@ -6,16 +6,6 @@
               version="2.2">
 
     <application>
-        <locale-config>
-            <default-locale>en</default-locale>
-            <supported-locale>tr</supported-locale>
-            <supported-locale>en</supported-locale>
-        </locale-config>
-        <message-bundle>i18n.errors</message-bundle>
-        <resource-bundle>
-            <base-name>i18n.messages</base-name>
-            <var>messages</var>
-        </resource-bundle>
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     </application>
 

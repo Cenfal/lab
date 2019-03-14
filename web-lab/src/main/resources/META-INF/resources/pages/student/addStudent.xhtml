@@ -19,9 +19,6 @@
                 <h:outputText value="Surname: " />
                 <p:inputText id="surname" value="#{studentBean.student.surname}" />
 
-                <h:outputText value="ID: " />
-                <p:inputText id="id" value="#{studentBean.student.studentId}" />
-
                 <h:outputText value="Dept. ID: " />
                 <p:inputText id="depid" value="#{studentBean.student.departmentId}" />
 
@@ -33,14 +30,14 @@
 
                 <h:outputText value="Title: " />
                 <p:inputText id="title" value="#{studentBean.student.title}" />
-
-                <p:commandButton value="Non-Ajax Submit" id="nonAjax" action="#{studentBean.save(student)}" style="margin-right:40px;" ajax="false" />
-
+<!--
 
                 <p:commandButton id="submit" value="Submit"
                                  update="greeting-panel"
-                                 action="#{studentBean.save(student)}"
-                                 oncomplete="PF('greetingDialog').show()" />
+                                 action="#{studentBean.save}"
+                                 oncomplete="PF('greetingDialog').show()" />-->
+
+                <p:commandButton value="Register" action="#{studentBean.save}" update="@form"/>
             </h:panelGrid>
         </p:panel>
 

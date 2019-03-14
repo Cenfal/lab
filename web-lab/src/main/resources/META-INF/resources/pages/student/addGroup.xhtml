@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Add Group</title>
+</h:head>
+
+<h:body>
+    <h:form id="AddGroup-form">
+
+        <p:panel header=" Group">
+            <h:panelGrid columns="1" cellpadding="4">
+                <h:outputText value="Name: " />
+                <p:inputText id="name" value="#{groupBean.group.groupName}" />
+
+                <h:outputText value="Quota: " />
+                <p:inputText id="quota" value="#{groupBean.group.quota}" />
+
+                <h:outputText value="Description: " />
+                <p:inputText id="description" value="#{groupBean.group.description}" />
+
+                               <h:outputText value="Department: " />
+                <p:selectOneMenu id="department1" value="#{departmentBean.departmentEntityArrayList}" style="width:150px"></p:selectOneMenu>
+
+                <h:outputText value="Department: " />
+                <p:selectOneMenu id="department2" value="#{departmentBean.departmentEntityList}" style="width:150px"></p:selectOneMenu>
+
+                <h:outputText value="Department :" />
+                <p:selectOneMenu value="#{departmentBean.department.description}">
+                    <c:forEach var="role" items="#{departmentBean.departmentEntityList}">
+                        <f:selectItem itemLabel="${role.description}" itemValue="${role.departmentId}" />
+                    </c:forEach>
+                </p:selectOneMenu>
+
+                <p:outputLabel for="group" value="Group: " />
+                <p:selectOneMenu id="group" value="#{dropdownView.country}" style="width:150px">
+                    <p:ajax listener="#{dropdownView.onCountryChange}" update="city" />
+                    <f:selectItem itemLabel="Select Country" itemValue="" noSelectionOption="true" />
+                    <f:selectItems value="#{dropdownView.countries}" />
+                </p:selectOneMenu>
+
+
+                <h:panelGroup style="float: left">
+                    <p:commandButton value="Yeni" action="#{groupBean.create}" update="@form"/>
+                    <p:commandButton value="Kaydet" action="#{groupBean.save}" update="@form"/>
+                </h:panelGroup>
+
+            </h:panelGrid>
+        </p:panel>
+
+        <p:dialog header="Greeting" widgetVar="greetingDialog"
+                  modal="true" resizable="false">
+            <h:panelGrid id="greeting-panel" columns="1" cellpadding="4">
+                <h:outputText value="#{groupBean.group.groupName}" />
+            </h:panelGrid>
+        </p:dialog>
+
+    </h:form>
+</h:body>
+</html>
