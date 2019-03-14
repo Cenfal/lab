@@ -24,6 +24,7 @@ public class StudentBean
     {
         try
         {
+
             this.studentService.save(student);
         }
         catch (Exception e)
